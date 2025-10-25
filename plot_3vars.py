@@ -1,5 +1,4 @@
 """
-
 E. Wes Bethel, Copyright (C) 2022
 
 October 2022
@@ -30,14 +29,15 @@ print("var names =", var_names)
 
 # split the df into individual vars
 # assumption: column order - 0=problem size, 1=blas time, 2=basic time
+# UPDATED: assume columns are [N, sum_direct, sum_indirect, sum_vector]
 
 problem_sizes = df[var_names[0]].values.tolist()
-code1_time = df[var_names[1]].values.tolist()
-code2_time = df[var_names[2]].values.tolist()
-code3_time = df[var_names[3]].values.tolist()
+code1_time = df[var_names[1]].values.tolist()  # sum_direct
+code2_time = df[var_names[2]].values.tolist()  # sum_indirect
+code3_time = df[var_names[3]].values.tolist()  # sum_vector
 
-plt.title("Comparison of 3 Codes")
-
+# ---------------- Runtime plot (seconds) ----------------
+plt.title("Comparison of 3 Codes (Runtime)")
 xlocs = [i for i in range(len(problem_sizes))]
 
 plt.xticks(xlocs, problem_sizes)
@@ -56,12 +56,33 @@ plt.plot(code3_time, "g-^")
 #plt.xscale("log")
 #plt.yscale("log")
 
-plt.xlabel("Problem Sizes")
-plt.ylabel("runtime")
+plt.xlabel("Problem Sizes (N)")
+plt.ylabel("runtime (s)")
 
-varNames = [var_names[1], var_names[2], var_names[3]]
+varNames = [var_names[1], var_names[2], var_names[3]]  # should be sum_direct, sum_indirect, sum_vector
 plt.legend(varNames, loc="best")
 
+plt.grid(axis='both')
+
+# ---------------- MFLOPS plot (million adds per second) ----------------
+# Compute MFLOPS ≈ (N-1 adds) / time / 1e6. Use small epsilon to avoid div-by-zero.
+ops = [max(int(n) - 1, 1) for n in problem_sizes]
+EPS = 1e-12
+code1_mflops = [(o / max(t, EPS)) / 1e6 for o, t in zip(ops, code1_time)]
+code2_mflops = [(o / max(t, EPS)) / 1e6 for o, t in zip(ops, code2_time)]
+code3_mflops = [(o / max(t, EPS)) / 1e6 for o, t in zip(ops, code3_time)]
+
+plt.figure()
+plt.title("Comparison of 3 Codes (MFLOPS)")
+plt.xticks(xlocs, problem_sizes)
+plt.plot(code1_mflops, "r-o")
+plt.plot(code2_mflops, "b-x")
+plt.plot(code3_mflops, "g-^")
+#plt.yscale("log")
+
+plt.xlabel("Problem Sizes (N)")
+plt.ylabel("Throughput (MFLOPS)")
+plt.legend(varNames, loc="best")
 plt.grid(axis='both')
 
 plt.show()
