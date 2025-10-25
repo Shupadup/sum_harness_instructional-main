@@ -1,0 +1,6 @@
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/benchmark.dir
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/sum_direct.dir
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/sum_vector.dir
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/sum_indirect.dir
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/edit_cache.dir
+/home/gator/Downloads/sum_harness_instructional-main/build/CMakeFiles/rebuild_cache.dir
