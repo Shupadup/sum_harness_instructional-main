@@ -1,1 +1,0 @@
-/usr/bin/c++ -O1 CMakeFiles/sum_direct.dir/sum_direct.cpp.o CMakeFiles/benchmark.dir/benchmark.cpp.o -o sum_direct 
