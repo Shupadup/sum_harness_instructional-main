@@ -1,0 +1,75 @@
+output on perlmutter spraned@perlmutter:login29:~/sum_harness_instructional-main/build> ./sum_direct
+Working on problem size N=8388608 
+ inside direct_sum problem_setup, N=8388608 
+ inside direct_sum perform_sum, N=8388608 
+ Sum result = 35184367894528; elapsed (sum) = 0.00s
+Working on problem size N=16777216 
+ inside direct_sum problem_setup, N=16777216 
+ inside direct_sum perform_sum, N=16777216 
+ Sum result = 140737479966720; elapsed (sum) = 0.01s
+Working on problem size N=33554432 
+ inside direct_sum problem_setup, N=33554432 
+ inside direct_sum perform_sum, N=33554432 
+ Sum result = 562949936644096; elapsed (sum) = 0.01s
+Working on problem size N=67108864 
+ inside direct_sum problem_setup, N=67108864 
+ inside direct_sum perform_sum, N=67108864 
+ Sum result = 2251799780130816; elapsed (sum) = 0.02s
+Working on problem size N=134217728 
+ inside direct_sum problem_setup, N=134217728 
+ inside direct_sum perform_sum, N=134217728 
+ Sum result = 9007199187632128; elapsed (sum) = 0.04s
+Working on problem size N=268435456 
+ inside direct_sum problem_setup, N=268435456 
+ inside direct_sum perform_sum, N=268435456 
+ Sum result = 36028796884746240; elapsed (sum) = 0.09s
+spraned@perlmutter:login29:~/sum_harness_instructional-main/build> ./sum_indirect 
+Working on problem size N=8388608 
+ inside sum_indirect problem_setup, N=8388608 
+ inside sum_indirect perform_sum, N=8388608 
+ Sum result = 0; elapsed (sum) = 0.01s
+Working on problem size N=16777216 
+ inside sum_indirect problem_setup, N=16777216 
+ inside sum_indirect perform_sum, N=16777216 
+ Sum result = 139581283080378; elapsed (sum) = 0.18s
+Working on problem size N=33554432 
+ inside sum_indirect problem_setup, N=33554432 
+ inside sum_indirect perform_sum, N=33554432 
+ Sum result = 575454994977145; elapsed (sum) = 0.28s
+Working on problem size N=67108864 
+ inside sum_indirect problem_setup, N=67108864 
+ inside sum_indirect perform_sum, N=67108864 
+ Sum result = 2264211589811946; elapsed (sum) = 0.91s
+Working on problem size N=134217728 
+ inside sum_indirect problem_setup, N=134217728 
+ inside sum_indirect perform_sum, N=134217728 
+. Sum result = 8710293069557353; elapsed (sum) = 0.84s
+Working on problem size N=268435456 
+ inside sum_indirect problem_setup, N=268435456 
+ inside sum_indirect perform_sum, N=268435456 
+ Sum result = 36186514358244033; elapsed (sum) = 10.54s
+spraned@perlmutter:login29:~/sum_harness_instructional-main/build> ./sum_vector
+Working on problem size N=8388608 
+ inside sum_vector problem_setup, N=8388608 
+ inside sum_vector perform_sum, N=8388608 
+ Sum result = 35184367894528; elapsed (sum) = 0.00s
+Working on problem size N=16777216 
+ inside sum_vector problem_setup, N=16777216 
+ inside sum_vector perform_sum, N=16777216 
+ Sum result = 140737479966720; elapsed (sum) = 0.01s
+Working on problem size N=33554432 
+ inside sum_vector problem_setup, N=33554432 
+ inside sum_vector perform_sum, N=33554432 
+ Sum result = 562949936644096; elapsed (sum) = 0.01s
+Working on problem size N=67108864 
+ inside sum_vector problem_setup, N=67108864 
+ inside sum_vector perform_sum, N=67108864 
+ Sum result = 2251799780130816; elapsed (sum) = 0.03s
+Working on problem size N=134217728 
+ inside sum_vector problem_setup, N=134217728 
+ inside sum_vector perform_sum, N=134217728 
+ Sum result = 9007199187632128; elapsed (sum) = 0.08s
+Working on problem size N=268435456 
+ inside sum_vector problem_setup, N=268435456 
+ inside sum_vector perform_sum, N=268435456 
+ Sum result = 36028796884746240; elapsed (sum) = 0.16s
